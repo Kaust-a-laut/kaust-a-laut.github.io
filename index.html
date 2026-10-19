@@ -220,53 +220,57 @@
     <h3>Rigorous bounds</h3>
     <ol class="pub-list">
 
-      <!-- [1] z3-site-upper-bound-0.4427 -->
-      <li class="entry" id="z3-site-upper-bound-0.4427" data-slug="z3-site-upper-bound-0.4427">
+      <!-- [1] z3-site-lower-bound-0.263376 -->
+      <li class="entry" id="z3-site-lower-bound-0.263376" data-slug="z3-site-lower-bound-0.263376">
         <p class="entry-head">
           <span class="entry-num" data-ignore-num="1">[1]</span>
+          <span class="entry-title"><i>p</i><sub>c</sub><sup>site</sup>(&#8484;<sup>3</sup>) &ge; 0.263376: a rigorous lower bound for site percolation on the cubic lattice.</span>
+        </p>
+        <p class="entry-status">Computer-assisted proof. Re-checked by three independent AI review agents (one reproduced the computation with its own code). Not yet peer-reviewed.</p>
+        <p class="entry-prev">
+          Previous best: <i>p</i><sub>c</sub> &gt; 0.2522 (Georgakopoulos and Panagiotis 2023) — best published value found as of 2026-10-19T19:07:43Z, in A. Georgakopoulos and C. Panagiotis, <em>Combin. Probab. Comput.</em> 32 (2023) 912–955, Theorem 7.1 (<a href="https://arxiv.org/abs/2107.06272">arXiv:2107.06272</a>, eq. (16); DOI: <a href="https://doi.org/10.1017/S0963548323000214">10.1017/S0963548323000214</a>).
+          [<a href="pdfs/z3-site-lower-bound-0.263376-proof.pdf">Proof (PDF)</a>]
+          [<a href="https://github.com/Kaust-a-laut/kaust-a-laut.github.io/tree/main/results/z3-site-lower-bound-0.263376">Code, certificate and checker</a>]
+          [<a href="results/z3-site-lower-bound-0.263376/README.md">package README</a>]
+          [<a href="results/z3-site-lower-bound-0.263376/ERRATA.md">Errata</a>]
+          <span class="secondary-pr">[Also submitted as a draft to the V3R1T4S open-results repository (<a href="https://github.com/elder-plinius/V3R1T4S/pull/571">PR #571</a>)]</span>
+        </p>
+
+        <div class="entry-summary">
+          <p>In words: the critical probability of site percolation on the simple cubic lattice is at least 263376/10<sup>6</sup> = 0.263376. The best published rigorous lower bound was 0.2522 (Georgakopoulos and Panagiotis, 2023, from lattice-animal counting). Numerically <i>p</i><sub>c</sub> is about 0.3116.</p>
+          <p>How it works (<code>object/PROOF.md</code>). Follow the shortest open paths from the origin along a canonical breadth-first tree: each site's parent is its neighbour one step closer to the origin, chosen in the fixed order +x, -x, +y, -y, +z, -z. A path in this tree is a neighbour-avoiding walk. Some sites next to it must be closed: every off-path site adjacent to two path sites at least 3 steps apart, and, at about half of the turns, the corner site, which would otherwise have been the preferred parent. If the origin's cluster is infinite, the tree has an infinite ray (Koenig's lemma). Its first N steps are such a path, and the rest is an infinite open path that avoids the path and its closed sites. Independence then gives theta(<i>p</i>) &le; K_N(<i>p</i>) theta(<i>p</i>), where K_N(<i>p</i>) = sum_f c_f <i>p</i>^(N+1) (1-<i>p</i>)^f. The integers c_f come from an exhaustive enumeration of all N-step walks (N = 20: 3,516,072,837,894 walks, enumerated as sign-flip orbits). K_20(263376/10<sup>6</sup>) = 0.99997153 &lt; 1 in exact rational arithmetic, so theta = 0 there and <i>p</i><sub>c</sub> &ge; 0.263376.</p>
+          <p>Torquato and Jiao (2013) state 5/19 = 0.263158 for this threshold without proof (they prove 1/6). The certificate gives K_20(5/19) = 0.98476 &lt; 1, so 5/19 is now a proved lower bound as well.</p>
+        </div>
+
+        <p class="entry-credits">Builds on: A. Georgakopoulos and C. Panagiotis (<em>Combin. Probab. Comput.</em> 32 (2023) 912-955, <a href="https://doi.org/10.1017/S0963548323000214">DOI: 10.1017/S0963548323000214</a>, <a href="https://arxiv.org/abs/1908.03426">arXiv:1908.03426</a> and <a href="https://arxiv.org/abs/2107.06272">arXiv:2107.06272</a>, the record compared against); G. Barequet and M. Shalah (<a href="https://arxiv.org/abs/1906.11447">arXiv:1906.11447</a>, the polycube growth-constant bound a(&#8484;<sup>3</sup>) &lt; 9.3835 behind that record); S. Torquato and Y. Jiao (<em>Phys. Rev. E</em> 87, 032149 (2013), <a href="https://arxiv.org/abs/1302.0332">arXiv:1302.0332</a>, the stated, unproven 5/19); A. Poenitz and P. Tittmann (<em>Electron. J. Combin.</em> 7 (2000) R21, the connective-constant bound 4.7387 behind the older 1/mu = 0.21103); The On-Line Encyclopedia of Integer Sequences, <a href="https://oeis.org/A174319">A174319</a> (neighbour-avoiding walks on the simple cubic lattice, an external anchor for the walk counts).</p>
+
+        <details>
+          <summary>Not claimed</summary>
+          <ul>
+            <li>Not the value of <i>p</i><sub>c</sub>, and nothing above 0.263376. Larger N would raise the bound. Ratio estimates suggest this forced structure levels off near 0.278; those are estimates, not results.</li>
+            <li>Nothing about bond percolation, other lattices or other dimensions.</li>
+            <li>No proof of Torquato and Jiao's method. The only claim is that their stated 5/19 lies below the bound proved here.</li>
+            <li>Monte Carlo confidence intervals (for example Ball 2013) are not bounds and are not compared.</li>
+            <li>The upper bound <i>p</i><sub>c</sub><sup>site</sup>(&#8484;<sup>3</sup>) &le; 0.4427 is a separate submission.</li>
+            <li>The run's <code>how-we-built-it/PREREG.md</code> names 0.21103 as the record. The panel found the higher record 0.2522, and the claim is compared against that (<code>panel/gate.md</code>).</li>
+          </ul>
+        </details>
+      </li>
+
+      <!-- [2] z3-site-upper-bound-0.4427 -->
+      <li class="entry" id="z3-site-upper-bound-0.4427" data-slug="z3-site-upper-bound-0.4427">
+        <p class="entry-head">
+          <span class="entry-num" data-ignore-num="1">[2]</span>
           <span class="entry-title"><i>p</i><sub>c</sub><sup>site</sup>(&#8484;<sup>3</sup>) &le; 0.4427: an explicit upper bound for site percolation on the cubic lattice.</span>
         </p>
         <p class="entry-status">Computer-assisted proof. Re-checked by three independent AI review agents (one reproduced the computation with its own code). Not yet peer-reviewed.</p>
         <p class="entry-prev">
-          Previous best: 1/2 (Campanino–Russo 1985, <i>p</i><sub>c</sub> &lt; 1/2; listed as 0,5000 (*) in Gomes–Pereira–Sanchis, <em>J. Appl. Probab.</em>, <a href="https://arxiv.org/abs/2106.10388">arXiv:2106.10388</a>, v2, 13 March 2026, <a href="https://doi.org/10.1017/jpr.2025.10041">DOI: 10.1017/jpr.2025.10041</a>, Table 1, non-oriented site percolation, d = 3) — best published value found as of 2026-10-19T00:12:39Z (and 2026-10-18T21:31:19Z).
+          Previous best: <i>p</i><sub>c</sub> &lt; 1/2 (Campanino-Russo 1985), listed as 0,5000 (*) in the table cited here — best published value found as of 2026-10-19T00:12:39Z (and 2026-10-18T21:31:19Z), in Gomes, Pereira, Sanchis, <em>J. Appl. Probab.</em> (<a href="https://arxiv.org/abs/2106.10388">arXiv:2106.10388</a>, v2, 13 March 2026, <a href="https://doi.org/10.1017/jpr.2025.10041">DOI: 10.1017/jpr.2025.10041</a>), Table 1, non-oriented site percolation, d = 3.
           [<a href="pdfs/z3-site-upper-bound-0.4427-proof.pdf">Proof (PDF)</a>]
           [<a href="https://github.com/Kaust-a-laut/kaust-a-laut.github.io/tree/main/results/z3-site-upper-bound-0.4427">Code, certificate and checker</a>]
           [<a href="results/z3-site-upper-bound-0.4427/README.md">package README</a>]
           <span class="secondary-pr">[Also submitted as a draft to the V3R1T4S open-results repository (<a href="https://github.com/elder-plinius/V3R1T4S/pull/481">PR #481</a>)]</span>
         </p>
-
-        <figure class="paper-fig">
-          <div class="svg-wrap" role="img" aria-label="Zoomed number line for Z^3 site percolation threshold bounds and estimate">
-            <svg class="numline" viewBox="0 0 700 120">
-              <!-- Thin black axis -->
-              <line x1="50" y1="60" x2="650" y2="60" stroke="#1a1a1a" stroke-width="1"/>
-              <!-- Earlier upper bound segment in mid-grey (0.4427 to 0.5) -->
-              <rect x="477" y="57.5" width="107" height="5" fill="#999999"/>
-              <!-- Rigorous window bar in solid black (0.2522 to 0.4427) -->
-              <rect x="120" y="57.5" width="357" height="5" fill="#1a1a1a"/>
-              <!-- Lower bound tick: 0.2522 (earlier work, grey tick) -->
-              <line x1="120" y1="46" x2="120" y2="74" stroke="#666666" stroke-width="1"/>
-              <text x="120" y="34" font-size="11.5" fill="#1a1a1a" text-anchor="middle">0.2522</text>
-              <text x="120" y="90" font-size="10.5" fill="#666666" text-anchor="middle">Georgakopoulos-Panagiotis 2023</text>
-              <text x="120" y="103" font-size="10" fill="#666666" text-anchor="middle">(rigorous lower bound, not this work)</text>
-              <!-- Numerical estimate hollow circle: 0.3116 -->
-              <circle cx="231" cy="60" r="4.5" fill="#ffffff" stroke="#1a1a1a" stroke-width="1"/>
-              <text x="231" y="34" font-size="11" fill="#1a1a1a" text-anchor="middle">0.3116</text>
-              <text x="231" y="46" font-size="10" fill="#666666" text-anchor="middle">numerical estimate (not a bound)</text>
-              <!-- This work's upper bound marker: 0.4427 -->
-              <line x1="477" y1="43" x2="477" y2="77" stroke="#1a1a1a" stroke-width="1"/>
-              <rect x="475.5" y="46" width="3" height="28" fill="#1a1a1a"/>
-              <text x="466" y="27" font-size="11.5" fill="#1a1a1a" text-anchor="end">0.4427 (this work)</text>
-              <text x="466" y="40" font-size="10" fill="#1a1a1a" text-anchor="end">rigorous upper bound</text>
-              <!-- Previous upper bound tick in mid-grey: 0.5 -->
-              <line x1="584" y1="46" x2="584" y2="74" stroke="#666666" stroke-width="1"/>
-              <text x="584" y="34" font-size="11.5" fill="#666666" text-anchor="middle">0.5</text>
-              <text x="584" y="90" font-size="10.5" fill="#666666" text-anchor="middle">Campanino-Russo</text>
-              <text x="584" y="103" font-size="10" fill="#666666" text-anchor="middle">(previous upper bound)</text>
-            </svg>
-          </div>
-          <figcaption data-ignore-num="1">Figure 1. Rigorous bounds for site percolation on &#8484;<sup>3</sup>; this work in black.</figcaption>
-        </figure>
 
         <div class="entry-summary">
           <p>In words: the critical probability of site percolation on the simple cubic lattice is at most 4427/10000. The best published rigorous upper bound was Campanino and Russo's <i>p</i><sub>c</sub> &lt; 1/2 (1985), with no explicit constant.</p>
@@ -285,12 +289,52 @@
             <li>No statement about higher dimensions, although bounds derived from the &#8484;<sup>3</sup> value (Gomes-Pereira-Sanchis, Theorem 2.3) would move.</li>
           </ul>
         </details>
+
+        <figure class="paper-fig">
+          <div class="svg-wrap" role="img" aria-label="Zoomed number line for Z^3 site percolation threshold showing rigorous lower bound 0.263376 and rigorous upper bound 0.4427 from this work, previous bounds 0.2522 and 0.5, and numerical estimate 0.3116">
+            <svg class="numline" viewBox="-35 0 725 125">
+              <!-- Thin black axis -->
+              <line x1="50" y1="60" x2="650" y2="60" stroke="#1a1a1a" stroke-width="1"/>
+              <!-- Earlier lower bound segment in mid-grey (0.2522 to 0.263376) -->
+              <rect x="120" y="57.5" width="21" height="5" fill="#999999"/>
+              <!-- Earlier upper bound segment in mid-grey (0.4427 to 0.5) -->
+              <rect x="477" y="57.5" width="107" height="5" fill="#999999"/>
+              <!-- Rigorous window bar in solid black (0.263376 to 0.4427) -->
+              <rect x="141" y="57.5" width="336" height="5" fill="#1a1a1a"/>
+              <!-- Previous lower bound tick in mid-grey: 0.2522 -->
+              <line x1="120" y1="46" x2="120" y2="74" stroke="#666666" stroke-width="1"/>
+              <text x="124" y="88" font-size="11.5" fill="#666666" text-anchor="end">0.2522</text>
+              <text x="124" y="101" font-size="10.5" fill="#666666" text-anchor="end">Georgakopoulos-Panagiotis 2023</text>
+              <text x="124" y="114" font-size="10" fill="#666666" text-anchor="end">(previous lower bound)</text>
+              <!-- This work's lower bound marker: 0.263376 -->
+              <line x1="141" y1="43" x2="141" y2="77" stroke="#1a1a1a" stroke-width="1"/>
+              <rect x="139.5" y="46" width="3" height="28" fill="#1a1a1a"/>
+              <text x="148" y="27" font-size="11.5" fill="#1a1a1a" text-anchor="start">0.263376 (this work)</text>
+              <text x="148" y="40" font-size="10" fill="#1a1a1a" text-anchor="start">rigorous lower bound</text>
+              <!-- Numerical estimate hollow circle: 0.3116 -->
+              <circle cx="231" cy="60" r="4.5" fill="#ffffff" stroke="#1a1a1a" stroke-width="1"/>
+              <text x="231" y="88" font-size="11" fill="#1a1a1a" text-anchor="middle">0.3116</text>
+              <text x="231" y="101" font-size="10" fill="#666666" text-anchor="middle">numerical estimate (not a bound)</text>
+              <!-- This work's upper bound marker: 0.4427 -->
+              <line x1="477" y1="43" x2="477" y2="77" stroke="#1a1a1a" stroke-width="1"/>
+              <rect x="475.5" y="46" width="3" height="28" fill="#1a1a1a"/>
+              <text x="466" y="27" font-size="11.5" fill="#1a1a1a" text-anchor="end">0.4427 (this work)</text>
+              <text x="466" y="40" font-size="10" fill="#1a1a1a" text-anchor="end">rigorous upper bound</text>
+              <!-- Previous upper bound tick in mid-grey: 0.5 -->
+              <line x1="584" y1="46" x2="584" y2="74" stroke="#666666" stroke-width="1"/>
+              <text x="584" y="34" font-size="11.5" fill="#666666" text-anchor="middle">0.5</text>
+              <text x="584" y="88" font-size="10.5" fill="#666666" text-anchor="middle">Campanino-Russo</text>
+              <text x="584" y="101" font-size="10" fill="#666666" text-anchor="middle">(previous upper bound)</text>
+            </svg>
+          </div>
+          <figcaption data-ignore-num="1">Figure 1. Rigorous bounds for site percolation on &#8484;<sup>3</sup>; this work in black.</figcaption>
+        </figure>
       </li>
 
-      <!-- [2] z2-site-lower-bound-0.5567 -->
+      <!-- [3] z2-site-lower-bound-0.5567 -->
       <li class="entry" id="z2-site-lower-bound-0.5567" data-slug="z2-site-lower-bound-0.5567">
         <p class="entry-head">
-          <span class="entry-num" data-ignore-num="1">[2]</span>
+          <span class="entry-num" data-ignore-num="1">[3]</span>
           <span class="entry-title"><i>p</i><sub>c</sub><sup>site</sup>(&#8484;<sup>2</sup>) &ge; 0.5567: a rigorous lower bound for site percolation on the square lattice.</span>
         </p>
         <p class="entry-status">Computer-assisted proof. Re-checked by three independent AI review agents (one reproduced the computation with its own code). Not yet peer-reviewed.</p>
@@ -355,12 +399,12 @@
     </ol>
 
     <h3>Numerical estimate</h3>
-    <ol class="pub-list" start="3">
+    <ol class="pub-list" start="4">
 
-      <!-- [3] lattice-23-site-threshold -->
+      <!-- [4] lattice-23-site-threshold -->
       <li class="entry" id="lattice-23-site-threshold" data-slug="lattice-23-site-threshold">
         <p class="entry-head">
-          <span class="entry-num" data-ignore-num="1">[3]</span>
+          <span class="entry-num" data-ignore-num="1">[4]</span>
           <span class="entry-title">Site percolation threshold of 2-uniform lattice #23: <i>p</i><sub>c</sub> = 0.57176454(10).</span>
         </p>
         <p class="entry-status">Numerical estimate with error bar, not a theorem. Re-checked by three independent AI review agents. Not yet peer-reviewed.</p>
@@ -392,12 +436,12 @@
     </ol>
 
     <h3>Combinatorial constructions</h3>
-    <ol class="pub-list" start="4">
+    <ol class="pub-list" start="5">
 
-      <!-- [4] covering-C61-25-3-27 -->
+      <!-- [5] covering-C61-25-3-27 -->
       <li class="entry" id="covering-C61-25-3-27" data-slug="covering-C61-25-3-27">
         <p class="entry-head">
-          <span class="entry-num" data-ignore-num="1">[4]</span>
+          <span class="entry-num" data-ignore-num="1">[5]</span>
           <span class="entry-title">C(61,25,3) &le; 27: a (61,25,3) covering design with 27 blocks.</span>
         </p>
         <p class="entry-status">Explicit construction; the included checker verifies it in seconds.</p>
@@ -424,10 +468,10 @@
         </details>
       </li>
 
-      <!-- [5] covering-C85-24-3-76 -->
+      <!-- [6] covering-C85-24-3-76 -->
       <li class="entry" id="covering-C85-24-3-76" data-slug="covering-C85-24-3-76">
         <p class="entry-head">
-          <span class="entry-num" data-ignore-num="1">[5]</span>
+          <span class="entry-num" data-ignore-num="1">[6]</span>
           <span class="entry-title">C(85,24,3) &le; 76: a (85,24,3) covering design with 76 blocks.</span>
         </p>
         <p class="entry-status">Explicit construction; the included checker verifies it in seconds.</p>
@@ -454,10 +498,10 @@
         </details>
       </li>
 
-      <!-- [6] covering-C41-12-5-2207 -->
+      <!-- [7] covering-C41-12-5-2207 -->
       <li class="entry" id="covering-C41-12-5-2207" data-slug="covering-C41-12-5-2207">
         <p class="entry-head">
-          <span class="entry-num" data-ignore-num="1">[6]</span>
+          <span class="entry-num" data-ignore-num="1">[7]</span>
           <span class="entry-title">C(41,12,5) &le; 2207: a (41,12,5) covering design with 2207 blocks.</span>
         </p>
         <p class="entry-status">Explicit construction; the included checker verifies it in seconds.</p>
@@ -484,10 +528,10 @@
         </details>
       </li>
 
-      <!-- [7] covering-C53-20-3-34 -->
+      <!-- [8] covering-C53-20-3-34 -->
       <li class="entry" id="covering-C53-20-3-34" data-slug="covering-C53-20-3-34">
         <p class="entry-head">
-          <span class="entry-num" data-ignore-num="1">[7]</span>
+          <span class="entry-num" data-ignore-num="1">[8]</span>
           <span class="entry-title">C(53,20,3) &le; 34: a (53,20,3) covering design with 34 blocks.</span>
         </p>
         <p class="entry-status">Explicit construction; the included checker verifies it in seconds.</p>
@@ -532,6 +576,10 @@
     <ol class="ref-list">
       <li>M. Campanino and L. Russo, An upper bound on the critical percolation probability for the three-dimensional cubic lattice, <em>Ann. Probab.</em> 13 (1985) 478–491.</li>
       <li>A. Georgakopoulos and C. Panagiotis, On the exponential growth rates of lattice animals and interfaces, <em>Combin. Probab. Comput.</em> 32 (2023) 912–955 [<a href="https://arxiv.org/abs/2107.06272">arXiv:2107.06272</a>, <a href="https://doi.org/10.1017/S0963548323000214">DOI</a>].</li>
+      <li>S. Torquato and Y. Jiao, <em>Phys. Rev. E</em> 87, 032149 (2013) [<a href="https://arxiv.org/abs/1302.0332">arXiv:1302.0332</a>].</li>
+      <li>G. Barequet and M. Shalah [<a href="https://arxiv.org/abs/1906.11447">arXiv:1906.11447</a>].</li>
+      <li>A. Poenitz and P. Tittmann, Improved upper bounds for self-avoiding walks in Z^d, <em>Electron. J. Combin.</em> 7 (2000) R21.</li>
+      <li>The On-Line Encyclopedia of Integer Sequences, A174319 [<a href="https://oeis.org/A174319">https://oeis.org/A174319</a>].</li>
       <li>J. van den Berg and A. Ermakov, A new lower bound for the critical probability of site percolation on the square lattice, <em>Random Structures Algorithms</em> 8 (1996) 199–212 [<a href="https://doi.org/10.1002/(SICI)1098-2418(199605)8:3%3C199::AID-RSA4%3E3.0.CO;2-T">DOI</a>].</li>
       <li>M. V. Menshikov and K. D. Pelikh, Percolation with several defect types. An estimate of critical probability for a square lattice, <em>Mat. Zametki</em> 46 (1989) 38–47; <em>Math. Notes</em> 46 (1990) 778–785.</li>
       <li>M. E. Fisher, Critical probabilities for cluster size and percolation problems, <em>J. Math. Phys.</em> 2 (1961) 620–627.</li>
