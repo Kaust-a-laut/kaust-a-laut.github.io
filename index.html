@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caleb Ashton — Computer-Assisted Bounds in Percolation and Combinatorics</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 2.75rem 1.25rem 4rem;
+      background: #ffffff;
+      color: #1a1a1a;
+      font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+      font-size: 17.5px;
+      line-height: 1.6;
+    }
+    header, main, footer {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    header {
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.75rem;
+      border-bottom: 1px solid #cccccc;
+    }
+    h1 {
+      margin: 0 0 0.25rem 0;
+      font-size: 1.55rem;
+      font-weight: normal;
+      line-height: 1.3;
+    }
+    .tagline {
+      margin: 0 0 0.35rem 0;
+    }
+    .header-links {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+    h2 {
+      font-size: 1.15rem;
+      font-weight: normal;
+      font-variant: small-caps;
+      letter-spacing: 0.04em;
+      margin: 2.25rem 0 0.85rem 0;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid #cccccc;
+    }
+    h3 {
+      font-size: 1.05rem;
+      font-weight: normal;
+      font-style: italic;
+      margin: 1.5rem 0 0.75rem 0;
+    }
+    p {
+      margin: 0 0 0.75rem 0;
+    }
+    a {
+      color: #1f3a5f;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:visited {
+      color: #3b4d66;
+    }
+    ol.pub-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    li.entry {
+      margin-bottom: 1.85rem;
+    }
+    .entry-head {
+      margin-bottom: 0.35rem;
+    }
+    .entry-num {
+      margin-right: 0.35rem;
+    }
+    .entry-title {
+      font-weight: normal;
+    }
+    .entry-status {
+      margin: 0 0 0.35rem 0;
+      font-size: 0.94rem;
+    }
+    .entry-prev {
+      margin: 0 0 0.55rem 0;
+      font-size: 0.94rem;
+    }
+    .entry-summary {
+      margin: 0.55rem 0;
+    }
+    .entry-credits {
+      margin: 0.45rem 0;
+      font-size: 0.9rem;
+      color: #555555;
+    }
+    .secondary-pr {
+      font-size: 0.9rem;
+      color: #555555;
+    }
+    details {
+      margin-top: 0.4rem;
+      font-size: 0.88rem;
+      color: #555555;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: normal;
+    }
+    details ul {
+      margin: 0.35rem 0 0.2rem 0;
+      padding-left: 1.25rem;
+    }
+    details li {
+      margin-bottom: 0.25rem;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.86em;
+      word-break: break-word;
+    }
+    figure.paper-fig {
+      margin: 1.1rem 0 1.25rem 0;
+      text-align: center;
+    }
+    .svg-wrap {
+      overflow-x: auto;
+    }
+    svg.numline {
+      width: 100%;
+      max-width: 680px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+    }
+    figcaption {
+      margin-top: 0.35rem;
+      font-size: 0.86rem;
+      color: #555555;
+      text-align: center;
+    }
+    ol.ref-list {
+      padding-left: 1.4rem;
+      margin: 0.5rem 0 0 0;
+      font-size: 0.92rem;
+    }
+    ol.ref-list li {
+      margin-bottom: 0.4rem;
+    }
+    footer {
+      margin-top: 2.75rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid #cccccc;
+      font-size: 0.85rem;
+      color: #666666;
+    }
+    @media (max-width: 480px) {
+      body {
+        padding: 1.5rem 0.9rem 2.5rem;
+        font-size: 16.5px;
+      }
+      h1 {
+        font-size: 1.35rem;
+      }
+    }
+    @media print {
+      body {
+        padding: 0;
+        background: #ffffff;
+        color: #1a1a1a;
+        font-size: 11pt;
+      }
+      header, main, footer {
+        max-width: 100%;
+      }
+      a {
+        color: #1a1a1a;
+        text-decoration: underline;
+      }
+      a[href^="http"]::after,
+      a[href^="pdfs/"]::after,
+      a[href^="results/"]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        word-break: break-all;
+      }
+      details {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Caleb Ashton</h1>
+  <p class="tagline">Independent researcher: computer-assisted bounds in percolation and combinatorics.</p>
+  <p class="header-links">
+    Email: <a href="mailto:cash4shton@gmail.com">cash4shton@gmail.com</a> &middot;
+    GitHub: <a href="https://github.com/Kaust-a-laut">Kaust-a-laut</a>
+  </p>
+</header>
+
+<main>
+
+  <section id="about">
+    <h2>1. About</h2>
+    <p>Caleb Ashton is an independent researcher working on computer-assisted bounds in percolation theory and explicit combinatorial constructions. Each result below is accompanied by a self-contained verification script and certificate or design file.</p>
+  </section>
+
+  <section id="results">
+    <h2>2. Results</h2>
+
+    <h3>Rigorous bounds</h3>
+    <ol class="pub-list">
+
+      <!-- [1] z3-site-upper-bound-0.4427 -->
+      <li class="entry" id="z3-site-upper-bound-0.4427" data-slug="z3-site-upper-bound-0.4427">
+        <p class="entry-head">
+          <span class="entry-num" data-ignore-num="1">[1]</span>
+          <span class="entry-title"><i>p</i><sub>c</sub><sup>site</sup>(&#8484;<sup>3</sup>) &le; 0.4427: an explicit upper bound for site percolation on the cubic lattice.</span>
+        </p>
+        <p class="entry-status">Computer-assisted proof. Re-checked by three independent AI review agents (one reproduced the computation with its own code). Not yet peer-reviewed.</p>
+        <p class="entry-prev">
+          Previous best: 0,5000 (*), i.e. Campanino-Russo's <i>p</i><sub>c</sub> &lt; 1/2 (1/2, Campanino-Russo 1985) — best published value found as of 2026-10-19T00:12:39Z (and 2026-10-18T21:31:19Z), in Gomes, Pereira, Sanchis, <em>J. Appl. Probab.</em> (<a href="https://arxiv.org/abs/2106.10388">arXiv:2106.10388</a>, v2, 13 March 2026, <a href="https://doi.org/10.1017/jpr.2025.10041">DOI: 10.1017/jpr.2025.10041</a>), Table 1, non-oriented site percolation, d = 3.
+          [<a href="pdfs/z3-site-upper-bound-0.4427-proof.pdf">Proof (PDF)</a>]
+          [<a href="https://github.com/Kaust-a-laut/kaust-a-laut.github.io/tree/main/results/z3-site-upper-bound-0.4427">Code, certificate and checker</a>]
+          [<a href="results/z3-site-upper-bound-0.4427/README.md">package README</a>]
+          <span class="secondary-pr">[Also submitted as a draft to the V3R1T4S open-results repository (<a href="https://github.com/elder-plinius/V3R1T4S/pull/481">PR #481</a>)]</span>
+        </p>
+
+        <figure class="paper-fig">
+          <div class="svg-wrap" role="img" aria-label="Zoomed number line for Z^3 site percolation threshold bounds and estimate">
+            <svg class="numline" viewBox="0 0 700 120">
+              <!-- Thin black axis -->
+              <line x1="50" y1="60" x2="650" y2="60" stroke="#1a1a1a" stroke-width="1"/>
+              <!-- Earlier upper bound segment in mid-grey (0.4427 to 0.5) -->
+              <rect x="477" y="57.5" width="107" height="5" fill="#999999"/>
+              <!-- Rigorous window bar in solid black (0.2522 to 0.4427) -->
+              <rect x="120" y="57.5" width="357" height="5" fill="#1a1a1a"/>
+              <!-- Lower bound tick: 0.2522 (earlier work, grey tick) -->
+              <line x1="120" y1="46" x2="120" y2="74" stroke="#666666" stroke-width="1"/>
+              <text x="120" y="34" font-size="11.5" fill="#1a1a1a" text-anchor="middle">0.2522</text>
+              <text x="120" y="90" font-size="10.5" fill="#666666" text-anchor="middle">Georgakopoulos-Panagiotis 2023</text>
+              <text x="120" y="103" font-size="10" fill="#666666" text-anchor="middle">(rigorous lower bound, not this work)</text>
+              <!-- Numerical estimate hollow circle: 0.3116 -->
+              <circle cx="231" cy="60" r="4.5" fill="#ffffff" stroke="#1a1a1a" stroke-width="1"/>
+              <text x="231" y="34" font-size="11" fill="#1a1a1a" text-anchor="middle">0.3116</text>
+              <text x="231" y="46" font-size="10" fill="#666666" text-anchor="middle">numerical estimate (not a bound)</text>
+              <!-- This work's upper bound marker: 0.4427 -->
+              <line x1="477" y1="43" x2="477" y2="77" stroke="#1a1a1a" stroke-width="1"/>
+              <rect x="475.5" y="46" width="3" height="28" fill="#1a1a1a"/>
+              <text x="466" y="27" font-size="11.5" fill="#1a1a1a" text-anchor="end">0.4427 (this work)</text>
+              <text x="466" y="40" font-size="10" fill="#1a1a1a" text-anchor="end">rigorous upper bound</text>
+              <!-- Previous upper bound tick in mid-grey: 0.5 -->
+              <line x1="584" y1="46" x2="584" y2="74" stroke="#666666" stroke-width="1"/>
+              <text x="584" y="34" font-size="11.5" fill="#666666" text-anchor="middle">0.5</text>
+              <text x="584" y="90" font-size="10.5" fill="#666666" text-anchor="middle">Campanino-Russo</text>
+              <text x="584" y="103" font-size="10" fill="#666666" text-anchor="middle">(previous upper bound)</text>
+            </svg>
+          </div>
+          <figcaption data-ignore-num="1">Figure 1. Rigorous bounds for site percolation on &#8484;<sup>3</sup>; this work in black.</figcaption>
+        </figure>
+
+        <div class="entry-summary">
+          <p>In words: the critical probability of site percolation on the simple cubic lattice is at most 4427/10000. The best published rigorous upper bound was Campanino and Russo's <i>p</i><sub>c</sub> &lt; 1/2 (1985), with no explicit constant.</p>
+          <p>The proof (<code>object/PROOF.md</code>) tiles &#8484;<sup>3</sup> by 3x3x3 blocks, follows a block growth process in the style of van den Berg and Ermakov (1996), and reduces "each step dominates Bernoulli(q)" to 6 x 511 laws checked against all 7579 nontrivial up-sets of {0,1}<sup>5</sup> (Strassen's criterion) over all 2<sup>27</sup> block states, in outward-rounded interval arithmetic with an exact integer comparison. A chain of seven such certificates goes from theta(0.501) &gt; 0 (by Campanino-Russo's <i>p</i><sub>c</sub> &le; 1/2) down to <i>p</i> = 0.4427.</p>
+        </div>
+
+        <p class="entry-credits">Builds on: M. Campanino and L. Russo (1985, <em>Ann. Probab.</em> 13, 478-491, the base input <i>p</i><sub>c</sub> &le; 1/2); J. van den Berg and A. Ermakov (1996, <em>Random Structures Algorithms</em> 8, 199-212, the growth-process and Strassen-coupling method); V. Strassen (1965, <em>Ann. Math. Statist.</em> 36, 423-439); P. A. Gomes, A. Pereira and R. Sanchis (<a href="https://arxiv.org/abs/2106.10388">arXiv:2106.10388</a>, the table compared against); G. R. Grimmett (<a href="https://arxiv.org/abs/1604.04849">arXiv:1604.04849</a>, the record's status); J. C. Wierman (1995, <em>Combin. Probab. Comput.</em> 4, 181-188) and N. Ball (<a href="https://arxiv.org/abs/1312.0961">arXiv:1312.0961</a>).</p>
+
+        <details>
+          <summary>Not claimed</summary>
+          <ul>
+            <li>Not the value of <i>p</i><sub>c</sub>, and not a bound below 0.4427. This block and rule have a fixed point near 0.4426.</li>
+            <li>Nothing about bond percolation (its cubic-lattice bound 0.347297, Yu and Wierman 2021, is a different model).</li>
+            <li>Confidence intervals (Ball 2013) are not compared: they are not bounds.</li>
+            <li>The run also certified a variant chain starting from q = 0.68, which needs only <i>p</i><sub>c</sub><sup>site</sup>(&#8484;<sup>2</sup>) &le; 0.679492 (Wierman 1995) and &#8484;<sup>2</sup> inside &#8484;<sup>3</sup> instead of Campanino-Russo (<code>how-we-built-it/outputs/chainW_summary_unpanelled.txt</code>). That variant was done after the panel and is not part of the panelled claim.</li>
+            <li>No statement about higher dimensions, although bounds derived from the &#8484;<sup>3</sup> value (Gomes-Pereira-Sanchis, Theorem 2.3) would move.</li>
+          </ul>
+        </details>
+      </li>
+
+      <!-- [2] z2-site-lower-bound-0.5567 -->
+      <li class="entry" id="z2-site-lower-bound-0.5567" data-slug="z2-site-lower-bound-0.5567">
+        <p class="entry-head">
+          <span class="entry-num" data-ignore-num="1">[2]</span>
+          <span class="entry-title"><i>p</i><sub>c</sub><sup>site</sup>(&#8484;<sup>2</sup>) &ge; 0.5567: a rigorous lower bound for site percolation on the square lattice.</span>
+        </p>
+        <p class="entry-status">Computer-assisted proof. Re-checked by three independent AI review agents (one reproduced the computation with its own code). Not yet peer-reviewed.</p>
+        <p class="entry-prev">
+          Previous best: 0.556 — best published value found as of 2026-10-18T18:50:24Z to 18:54:23Z, in J. van den Berg and A. Ermakov, <em>Random Structures Algorithms</em> 8 (1996) 199-212 (<a href="https://doi.org/10.1002/(SICI)1098-2418(199605)8:3%3C199::AID-RSA4%3E3.0.CO;2-T">DOI: 10.1002/(SICI)1098-2418(199605)8:3&lt;199::AID-RSA4&gt;3.0.CO;2-T</a>).
+          [<a href="pdfs/z2-site-lower-bound-0.5567-proof.pdf">Proof (PDF)</a>]
+          [<a href="https://github.com/Kaust-a-laut/kaust-a-laut.github.io/tree/main/results/z2-site-lower-bound-0.5567">Code, certificate and checker</a>]
+          [<a href="results/z2-site-lower-bound-0.5567/README.md">package README</a>]
+          <span class="secondary-pr">[Also submitted as a draft to the V3R1T4S open-results repository (<a href="https://github.com/elder-plinius/V3R1T4S/pull/458">PR #458</a>)]</span>
+        </p>
+
+        <figure class="paper-fig">
+          <div class="svg-wrap" role="img" aria-label="Zoomed number line for Z^2 site percolation threshold bounds and estimate">
+            <svg class="numline" viewBox="0 0 700 120">
+              <!-- Thin black axis -->
+              <line x1="50" y1="60" x2="650" y2="60" stroke="#1a1a1a" stroke-width="1"/>
+              <!-- Earlier lower bound segment in mid-grey (0.556 to 0.5567) -->
+              <rect x="107" y="57.5" width="18" height="5" fill="#999999"/>
+              <!-- Rigorous window bar in solid black (0.5567 to 0.666894) -->
+              <rect x="125" y="57.5" width="459" height="5" fill="#1a1a1a"/>
+              <!-- Previous lower bound tick in mid-grey: 0.556 -->
+              <line x1="107" y1="46" x2="107" y2="74" stroke="#666666" stroke-width="1"/>
+              <text x="102" y="90" font-size="11" fill="#666666" text-anchor="end">0.556</text>
+              <text x="102" y="103" font-size="10" fill="#666666" text-anchor="end">(previous)</text>
+              <!-- This work's lower bound marker: 0.5567 -->
+              <line x1="125" y1="43" x2="125" y2="77" stroke="#1a1a1a" stroke-width="1"/>
+              <rect x="123.5" y="46" width="3" height="28" fill="#1a1a1a"/>
+              <text x="134" y="27" font-size="11.5" fill="#1a1a1a" text-anchor="start">0.5567 (this work)</text>
+              <text x="134" y="40" font-size="10" fill="#1a1a1a" text-anchor="start">rigorous lower bound</text>
+              <!-- Numerical estimate hollow circle: 0.592746 -->
+              <circle cx="275" cy="60" r="4.5" fill="#ffffff" stroke="#1a1a1a" stroke-width="1"/>
+              <text x="275" y="90" font-size="11" fill="#1a1a1a" text-anchor="middle">0.592746 (Jacobsen 2015)</text>
+              <text x="275" y="103" font-size="10" fill="#666666" text-anchor="middle">numerical estimate (not a bound)</text>
+              <!-- Rigorous upper bound tick: 0.666894 (earlier work, grey tick) -->
+              <line x1="584" y1="46" x2="584" y2="74" stroke="#666666" stroke-width="1"/>
+              <text x="584" y="34" font-size="11.5" fill="#1a1a1a" text-anchor="middle">0.666894</text>
+              <text x="584" y="90" font-size="10.5" fill="#666666" text-anchor="middle">Wierman-Oberly 2024</text>
+              <text x="584" y="103" font-size="10" fill="#666666" text-anchor="middle">(rigorous upper bound, not this work)</text>
+            </svg>
+          </div>
+          <figcaption data-ignore-num="1">Figure 2. Rigorous bounds for site percolation on &#8484;<sup>2</sup>; this work in black.</figcaption>
+        </figure>
+
+        <div class="entry-summary">
+          <p>The previous best published rigorous lower bound is 0.556 (J. van den Berg and A. Ermakov, 1996). The proof (<code>object/PROOF.md</code>) keeps their growth-process comparison. Their conditioning window is replaced by exact belief propagation over the exploration tree: exact to depth 3, with outer cones covering the rest of the history. The finite part is an exact rational check at <i>p</i> = 4433/10000 (<code>object/window.py</code>, <code>object/bound.json</code>), proving <i>p</i><sub>c</sub><sup>site</sup>(&#8484;<sup>2</sup>) &ge; 5567/10000 = 0.5567.</p>
+        </div>
+
+        <p class="entry-credits">Builds on: J. van den Berg and A. Ermakov (1996, <em>Random Structures Algorithms</em> 8, 199-212, the method and the bound improved) and A. Ermakov; M. V. Menshikov and K. D. Pelikh (1989, <em>Mat. Zametki</em> 46, 38-47; 1990, <em>Math. Notes</em> 46, 778-785, the original method); M. E. Fisher (1961, <em>J. Math. Phys.</em> 2, 620-627, <i>p</i><sub>c</sub>(S) + <i>p</i><sub>c</sub>(S*) &ge; 1); V. Strassen via T. M. Liggett (1985, <em>Interacting Particle Systems</em>, Chap. II, Thm 2.4, the coupling theorem); context values by J. C. Wierman and Oberly (2024, <a href="https://doi.org/10.1007/978-3-031-62166-6_9">DOI: 10.1007/978-3-031-62166-6_9</a>) and J. L. Jacobsen (2015, <a href="https://arxiv.org/abs/1507.03027">arXiv:1507.03027</a>).</p>
+
+        <details>
+          <summary>Not claimed</summary>
+          <ul>
+            <li>No upper bound. The best upper bound found is 0.666894 (Wierman and Oberly 2024), untouched.</li>
+            <li>Nothing about the numerical value of <i>p</i><sub>c</sub> (about 0.59274605, Jacobsen 2015), which is not a rigorous bound.</li>
+            <li>Not the best this method can give. The same relaxation passes up to <i>p</i> = 0.443214911 at depth 3, and saturates at 0.556788090 by depth 8. Only <i>p</i> = 4433/10000 was frozen in the preregistration, so only 0.5567 is claimed.</li>
+            <li>The proof rests on two classical theorems as cited: Fisher's inequality <i>p</i><sub>c</sub>(S) + <i>p</i><sub>c</sub>(S*) &ge; 1, and Strassen's coupling theorem.</li>
+            <li>See <code>ERRATA.md</code> for small corrections to the panelled text. None changes the result.</li>
+          </ul>
+        </details>
+      </li>
+
+    </ol>
+
+    <h3>Numerical estimate</h3>
+    <ol class="pub-list" start="3">
+
+      <!-- [3] lattice-23-site-threshold -->
+      <li class="entry" id="lattice-23-site-threshold" data-slug="lattice-23-site-threshold">
+        <p class="entry-head">
+          <span class="entry-num" data-ignore-num="1">[3]</span>
+          <span class="entry-title">Site percolation threshold of 2-uniform lattice #23: <i>p</i><sub>c</sub> = 0.57176454(10).</span>
+        </p>
+        <p class="entry-status">Numerical estimate with error bar, not a theorem. Re-checked by three independent AI review agents. Not yet peer-reviewed.</p>
+        <p class="entry-prev">
+          Previous best: 0.5720(2) — best published value found as of 2026-10-18T05:11:54Z (and 2026-10-17T23:58:23Z), in R. A. Neher, K. Mecke and H. Wagner, <em>J. Stat. Mech.</em> (2008), <a href="https://arxiv.org/abs/0708.3250">arXiv:0708.3250</a> (table in <a href="https://arxiv.org/abs/0708.3251">arXiv:0708.3251</a>), as listed in row 23 of the "2-uniform lattices" table on Wikipedia's Percolation threshold page.
+          [<a href="https://github.com/Kaust-a-laut/kaust-a-laut.github.io/tree/main/results/lattice-23-site-threshold">Code, certificate and checker</a>]
+          [<a href="results/lattice-23-site-threshold/README.md">package README</a>]
+          <span class="secondary-pr">[Also submitted as a draft to the V3R1T4S open-results repository (<a href="https://github.com/elder-plinius/V3R1T4S/pull/391">PR #391</a>)]</span>
+        </p>
+
+        <div class="entry-summary">
+          <p>For 2-uniform lattice #23, (1/2)(3<sup>3</sup>,4<sup>2</sup>)+(1/2)(4<sup>4</sup>), the site percolation threshold is 0.57176454 +- 0.00000010 by the frozen transfer-matrix extrapolation (n &le; 16), and it agrees within 1.53 combined sigma with an independent Monte Carlo wrapping-probability value of 0.5717667 +- 0.0000014 on tori up to 512 x 128 cells, while the same transfer-matrix code reproduces the table's citation-needed #23 bond value 0.45844622(40) to 2e-7 and the exact kagome and (3,12<sup>2</sup>) site thresholds, the value lies 1.2 table sigma from the table's 0.5720(2), and the recorded literature search found no published #23 site value more precise than 2e-4.</p>
+          <p>One cell: row 23 of the "2-uniform lattices" table on Wikipedia's "Percolation threshold" page, lattice (1/2)(3<sup>3</sup>,4<sup>2</sup>) + (1/2)(4<sup>4</sup>) (rows of squares and triangles in the pattern S S S T), site column. The table lists 0.5720(2) (Neher, Mecke and Wagner 2008); this value has a one-sigma uncertainty about 1900 times smaller and lies 1.2 of the table's sigma below it.</p>
+        </div>
+
+        <p class="entry-credits">Builds on: R. A. Neher, K. Mecke and H. Wagner (2008, <em>J. Stat. Mech.</em>, <a href="https://arxiv.org/abs/0708.3250">arXiv:0708.3250</a>, table in <a href="https://arxiv.org/abs/0708.3251">arXiv:0708.3251</a>); J. L. Jacobsen (<a href="https://arxiv.org/abs/1507.03027">arXiv:1507.03027</a>, <a href="https://arxiv.org/abs/1401.7847">arXiv:1401.7847</a>); C. R. Scullard and J. L. Jacobsen (<a href="https://arxiv.org/abs/1209.1451">arXiv:1209.1451</a>); M. E. J. Newman and R. M. Ziff (<a href="https://arxiv.org/abs/cond-mat/0005264">arXiv:cond-mat/0005264</a>); P. N. Suding and R. M. Ziff (<a href="https://arxiv.org/abs/cond-mat/9811416">arXiv:cond-mat/9811416</a>).</p>
+
+        <details>
+          <summary>Not claimed</summary>
+          <ul>
+            <li>No rigorous bound: sigma_TM = 1.04e-7 is the spread of the frozen extrapolation family. On Jacobsen's square-site sequence the same rule's error is at most 0.02 sigma at every cut n_max = 10..21. The independent Monte Carlo value 0.5717667(14) tests it only at the 1.4e-6 level, and lies 1.53 combined sigma above it.</li>
+            <li>The Monte Carlo fit uses tori up to 512 x 128 cells. The bank's "tori up to L &ge; 2048" is read as an example (it follows "for example"); the one 2048 x 512 torus is a low-statistics consistency check (sigma 2.3e-5), not in the fit.</li>
+            <li>Criterion (c), bond half: the bond value reproduced is the table's 0.45844622(40) for row 23, which the table marks "citation needed"; no paper is named for it.</li>
+            <li>No values for the other two-uniform lattices are claimed here. Interim transfer-matrix values for rows 20-22 are in <code>how-we-built-it/</code> only as run outputs. The row 22 bond value is the subject of a separate submission by another contributor (PR #239), not of this one.</li>
+          </ul>
+        </details>
+      </li>
+
+    </ol>
+
+    <h3>Combinatorial constructions</h3>
+    <ol class="pub-list" start="4">
+
+      <!-- [4] covering-C61-25-3-27 -->
+      <li class="entry" id="covering-C61-25-3-27" data-slug="covering-C61-25-3-27">
+        <p class="entry-head">
+          <span class="entry-num" data-ignore-num="1">[4]</span>
+          <span class="entry-title">C(61,25,3) &le; 27: a (61,25,3) covering design with 27 blocks.</span>
+        </p>
+        <p class="entry-status">Explicit construction; the included checker verifies it in seconds.</p>
+        <p class="entry-prev">
+          Previous best: 28 — best published value found as of 2026-10-15T23:10:40Z (and 2026-10-15T23:15:56Z; Zenodo v1.2 re-fetched 2026-10-15T23:18:02Z), in coveringrepository.com (plain (v,k,t) table, cell (61,25,3)) and the La Jolla Covering Repository (D. M. Gordon, <a href="https://doi.org/10.5281/zenodo.10779736">DOI: 10.5281/zenodo.10779736</a>, Zenodo v1.2, 2026-04-24: C(61,25,3) size 28, lower bound 22, set 2009-01-21 by "Simple construction from (60,24,3)").
+          [<a href="https://github.com/Kaust-a-laut/kaust-a-laut.github.io/tree/main/results/covering-C61-25-3-27">Code, certificate and checker</a>]
+          [<a href="results/covering-C61-25-3-27/README.md">package README</a>]
+          <span class="secondary-pr">[Also submitted as a draft to the V3R1T4S open-results repository (<a href="https://github.com/elder-plinius/V3R1T4S/pull/208">PR #208</a>)]</span>
+        </p>
+
+        <div class="entry-summary">
+          <p>The file <code>C61_25_3_27blocks.txt</code> (sha256 <code>097a9067d0628e1d3ba01f6230bafbcab3573b78f4d0c9913b8759676e00a18e</code>) is a (61,25,3) covering design with 27 blocks (all 35990 3-subsets of {1,...,61} checked exhaustively), one fewer than the 28 listed for (61,25,3) in the m = t coveringrepository.com archive as saved by the claim from its fetch at 2026-10-15T23:10:40Z and in the La Jolla Covering Repository Zenodo v1.2 <code>coverdata.json</code> as re-fetched at 2026-10-15T23:18:02Z. One cell: (v,k,t) = (61,25,3), plain covering (every 3-subset in at least one block), b = 27.</p>
+        </div>
+
+        <p class="entry-credits">Builds on: Daniel M. Gordon (La Jolla Covering Repository, <a href="https://github.com/dmgordo/LJCR">dmgordo/LJCR</a> and <a href="https://doi.org/10.5281/zenodo.10779736">DOI: 10.5281/zenodo.10779736</a>) and the Covering Repository; weighted tabu local search in the style of Nurmela and Ostergard.</p>
+
+        <details>
+          <summary>Not claimed</summary>
+          <ul>
+            <li>Not claimed optimal: the best lower bound we know of is 22 (LJCR low_bd); the Schonheim bound is 20.</li>
+            <li>No other cell, no lottery (v,k,t,m) covering, no lower bound.</li>
+            <li>The table may change after the fetch times above; recheck the cell before relying on it.</li>
+          </ul>
+        </details>
+      </li>
+
+      <!-- [5] covering-C85-24-3-76 -->
+      <li class="entry" id="covering-C85-24-3-76" data-slug="covering-C85-24-3-76">
+        <p class="entry-head">
+          <span class="entry-num" data-ignore-num="1">[5]</span>
+          <span class="entry-title">C(85,24,3) &le; 76: a (85,24,3) covering design with 76 blocks.</span>
+        </p>
+        <p class="entry-status">Explicit construction; the included checker verifies it in seconds.</p>
+        <p class="entry-prev">
+          Previous best: 77 — best published value found as of 2026-10-15T23:10:40Z (and 2026-10-15T23:26:02Z; Zenodo v1.2 and GitHub re-fetched 2026-10-15T23:29:59Z and 23:30:17Z), in coveringrepository.com (plain (v,k,t) table, cell (85,24,3)) and the La Jolla Covering Repository (D. M. Gordon, <a href="https://doi.org/10.5281/zenodo.10779736">DOI: 10.5281/zenodo.10779736</a>, Zenodo v1.2, 2026-04-24, and <a href="https://github.com/dmgordo/LJCR">dmgordo/LJCR</a>, last commit 2022-12-19: C(85,24,3) size 77, lower bound 61, set 2009-01-21 by "Simple construction from (86,24,3)").
+          [<a href="https://github.com/Kaust-a-laut/kaust-a-laut.github.io/tree/main/results/covering-C85-24-3-76">Code, certificate and checker</a>]
+          [<a href="results/covering-C85-24-3-76/README.md">package README</a>]
+          <span class="secondary-pr">[Also submitted as a draft to the V3R1T4S open-results repository (<a href="https://github.com/elder-plinius/V3R1T4S/pull/209">PR #209</a>)]</span>
+        </p>
+
+        <div class="entry-summary">
+          <p>The file <code>C85_24_3_76blocks.txt</code> (sha256 <code>d111b0feb0cd74f5af84f8bbf660d65979caca2eb05885191dbd3fb63c14ea53</code>) is a (85,24,3) covering design with 76 blocks, covering all 98770 3-subsets of {1..85} as checked exhaustively, which is one fewer than the 77 listed for (85,24,3) in the coveringrepository.com plain table as fetched by the claimant at 2026-10-15T23:10:40Z and in the LJCR Zenodo v1.2 and dmgordo/LJCR GitHub <code>coverdata.json</code> files as re-fetched at 2026-10-15T23:29:59Z and 23:30:17Z. One cell: (v,k,t) = (85,24,3), plain covering (every 3-subset in at least one block), b = 76.</p>
+        </div>
+
+        <p class="entry-credits">Builds on: Daniel M. Gordon (La Jolla Covering Repository, <a href="https://github.com/dmgordo/LJCR">dmgordo/LJCR</a> and <a href="https://doi.org/10.5281/zenodo.10779736">DOI: 10.5281/zenodo.10779736</a>) and the Covering Repository; weighted tabu local search in the style of Nurmela and Ostergard.</p>
+
+        <details>
+          <summary>Not claimed</summary>
+          <ul>
+            <li>Not claimed optimal: the best lower bound we know of is 61 (LJCR low_bd); the Schonheim bound is 54.</li>
+            <li>No other cell, no lottery (v,k,t,m) covering, no lower bound.</li>
+            <li>The table may change after the fetch times above; recheck the cell before relying on it.</li>
+          </ul>
+        </details>
+      </li>
+
+      <!-- [6] covering-C41-12-5-2207 -->
+      <li class="entry" id="covering-C41-12-5-2207" data-slug="covering-C41-12-5-2207">
+        <p class="entry-head">
+          <span class="entry-num" data-ignore-num="1">[6]</span>
+          <span class="entry-title">C(41,12,5) &le; 2207: a (41,12,5) covering design with 2207 blocks.</span>
+        </p>
+        <p class="entry-status">Explicit construction; the included checker verifies it in seconds.</p>
+        <p class="entry-prev">
+          Previous best: 2244 — best published value found as of 2026-10-15T23:10:40Z (and 2026-10-16T02:08:02Z; re-fetched 2026-10-17T00:52:19Z), in coveringrepository.com (plain (v,k,t) table, cell (41,12,5): 2.244 blocks, lower bound 1.121, author Terenzio Lazzarotto, date 04/06/2026), and 2245 in the La Jolla Covering Repository (D. M. Gordon, <a href="https://doi.org/10.5281/zenodo.10779736">DOI: 10.5281/zenodo.10779736</a>, Zenodo v1.2, 2026-04-24: C(41,12,5) size 2245, lower bound 1121, set 2026-02-28 by Jan de Heer and Steve Muir; <a href="https://github.com/dmgordo/LJCR">dmgordo/LJCR</a>, last commit 2022-12-19: size 2429, lower bound 1121).
+          [<a href="https://github.com/Kaust-a-laut/kaust-a-laut.github.io/tree/main/results/covering-C41-12-5-2207">Code, certificate and checker</a>]
+          [<a href="results/covering-C41-12-5-2207/README.md">package README</a>]
+          <span class="secondary-pr">[Also submitted as a draft to the V3R1T4S open-results repository (<a href="https://github.com/elder-plinius/V3R1T4S/pull/211">PR #211</a>)]</span>
+        </p>
+
+        <div class="entry-summary">
+          <p>The file <code>C41_12_5_2207blocks.txt</code> (sha256 <code>ec985f89dd793006ccf15346b6937419e1ce4e922034d73b18e769fb958778aa</code>) is a valid (41,12,5) covering design with 2207 blocks covering all 749398 5-subsets of {1..41} (checked exhaustively), 37 fewer than the 2244 listed in coveringrepository.com (fetched 2026-10-15T23:10:40Z) and 38 fewer than the 2245 in LJCR Zenodo v1.2. One cell: (v,k,t) = (41,12,5), plain covering (every 5-subset in at least one block), b = 2207.</p>
+        </div>
+
+        <p class="entry-credits">Builds on: Derived from de Heer &amp; Muir's design (no search): built by single-point derivation (rule R7, at minimum-degree point p = 16, degree 2207) from the published 8735-block (42,13,6) covering design in the La Jolla Covering Repository Zenodo v1.2 archive (contributed by Jan de Heer and Steve Muir, 2026-02-28); Daniel M. Gordon (La Jolla Covering Repository, <a href="https://github.com/dmgordo/LJCR">dmgordo/LJCR</a> and <a href="https://doi.org/10.5281/zenodo.10779736">DOI: 10.5281/zenodo.10779736</a>) and the Covering Repository (the live coveringrepository.com (42,13,6) record is 8718, a different design which we did not examine).</p>
+
+        <details>
+          <summary>Not claimed</summary>
+          <ul>
+            <li>Not claimed optimal: the best lower bound we know of is 1121 (LJCR low_bd); the Schonheim bound is 1070.</li>
+            <li>No other cell, no lottery (v,k,t,m) covering, no lower bound.</li>
+            <li>The table may change after the fetch times above; recheck the cell before relying on it.</li>
+          </ul>
+        </details>
+      </li>
+
+      <!-- [7] covering-C53-20-3-34 -->
+      <li class="entry" id="covering-C53-20-3-34" data-slug="covering-C53-20-3-34">
+        <p class="entry-head">
+          <span class="entry-num" data-ignore-num="1">[7]</span>
+          <span class="entry-title">C(53,20,3) &le; 34: a (53,20,3) covering design with 34 blocks.</span>
+        </p>
+        <p class="entry-status">Explicit construction; the included checker verifies it in seconds.</p>
+        <p class="entry-prev">
+          Previous best: 35 — best published value found as of 2026-10-15T23:10:40Z (and 2026-10-16T02:08:27Z), in coveringrepository.com (plain (v,k,t) table, cell (53,20,3)) and the La Jolla Covering Repository (D. M. Gordon, <a href="https://doi.org/10.5281/zenodo.10779736">DOI: 10.5281/zenodo.10779736</a>, Zenodo v1.2, 2026-04-24, and <a href="https://github.com/dmgordo/LJCR">dmgordo/LJCR</a>, last commit 2022-12-19: C(53,20,3) size 35, lower bound 30, set 2009-01-21 by "Simple construction from (54,20,3)").
+          [<a href="https://github.com/Kaust-a-laut/kaust-a-laut.github.io/tree/main/results/covering-C53-20-3-34">Code, certificate and checker</a>]
+          [<a href="results/covering-C53-20-3-34/README.md">package README</a>]
+          <span class="secondary-pr">[Also submitted as a draft to the V3R1T4S open-results repository (<a href="https://github.com/elder-plinius/V3R1T4S/pull/212">PR #212</a>)]</span>
+        </p>
+
+        <div class="entry-summary">
+          <p>The file <code>C53_20_3_34blocks.txt</code> (sha256 <code>ab13770f500eb1e64f71e63b1cd61f98500ddb58e0f22f985cef400861950a5e</code>) contains 34 distinct blocks of size 20 over {1..53} that exhaustively cover all C(53,3) = 23426 3-subsets, which is one fewer than the 35 blocks listed for (53,20,3) in the coveringrepository.com plain table as fetched at 2026-10-15T23:10:40Z and in LJCR Zenodo v1.2 and dmgordo/LJCR GitHub <code>coverdata.json</code>. One cell: (v,k,t) = (53,20,3), plain covering (every 3-subset in at least one block), b = 34.</p>
+        </div>
+
+        <p class="entry-credits">Builds on: Daniel M. Gordon (La Jolla Covering Repository, <a href="https://github.com/dmgordo/LJCR">dmgordo/LJCR</a> and <a href="https://doi.org/10.5281/zenodo.10779736">DOI: 10.5281/zenodo.10779736</a>) and the Covering Repository; weighted tabu local search in the style of Nurmela and Ostergard.</p>
+
+        <details>
+          <summary>Not claimed</summary>
+          <ul>
+            <li>Not claimed optimal: the best lower bound we know of is 30 (LJCR low_bd); the Schonheim bound is 24.</li>
+            <li>No other cell, no lottery (v,k,t,m) covering, no lower bound.</li>
+            <li>The table may change after the fetch times above; recheck the cell before relying on it.</li>
+          </ul>
+        </details>
+      </li>
+
+    </ol>
+  </section>
+
+  <section id="methods-and-ai-assistance">
+    <h2>3. Methods and AI assistance</h2>
+    <p>These results were found and checked with substantial AI assistance (Claude Code, by Anthropic). Each one was re-checked by independent AI reviewers, and each comes with code that reruns its proof or construction. None has yet been reviewed by a human expert. Comments, corrections and 'this step fails' are very welcome by email.</p>
+  </section>
+
+  <section id="contact">
+    <h2>4. Contact</h2>
+    <p>Email: <a href="mailto:cash4shton@gmail.com">cash4shton@gmail.com</a> &middot; GitHub: <a href="https://github.com/Kaust-a-laut">Kaust-a-laut</a></p>
+  </section>
+
+  <section id="selected-references">
+    <h2>Selected references</h2>
+    <ol class="ref-list">
+      <li>M. Campanino and L. Russo, An upper bound on the critical percolation probability for the three-dimensional cubic lattice, <em>Ann. Probab.</em> 13 (1985) 478–491.</li>
+      <li>A. Georgakopoulos and C. Panagiotis, On the exponential growth rates of lattice animals and interfaces, <em>Combin. Probab. Comput.</em> 32 (2023) 912–955 [<a href="https://arxiv.org/abs/2107.06272">arXiv:2107.06272</a>, <a href="https://doi.org/10.1017/S0963548323000214">DOI</a>].</li>
+      <li>J. van den Berg and A. Ermakov, A new lower bound for the critical probability of site percolation on the square lattice, <em>Random Structures Algorithms</em> 8 (1996) 199–212 [<a href="https://doi.org/10.1002/(SICI)1098-2418(199605)8:3%3C199::AID-RSA4%3E3.0.CO;2-T">DOI</a>].</li>
+      <li>M. V. Menshikov and K. D. Pelikh, Percolation with several defect types. An estimate of critical probability for a square lattice, <em>Mat. Zametki</em> 46 (1989) 38–47; <em>Math. Notes</em> 46 (1990) 778–785.</li>
+      <li>M. E. Fisher, Critical probabilities for cluster size and percolation problems, <em>J. Math. Phys.</em> 2 (1961) 620–627.</li>
+      <li>V. Strassen, The existence of probability measures with given marginals, <em>Ann. Math. Statist.</em> 36 (1965) 423–439.</li>
+      <li>P. A. Gomes, A. Pereira and R. Sanchis, Upper bounds for critical probabilities in Bernoulli percolation models, <em>J. Appl. Probab.</em> [<a href="https://arxiv.org/abs/2106.10388">arXiv:2106.10388</a>, <a href="https://doi.org/10.1017/jpr.2025.10041">DOI</a>].</li>
+      <li>J. C. Wierman and R. Oberly (2024), upper bound for site percolation on the square lattice [<a href="https://doi.org/10.1007/978-3-031-62166-6_9">DOI</a>]; J. C. Wierman, Substitution method critical probability bounds for the square lattice site percolation model, <em>Combin. Probab. Comput.</em> 4 (1995) 181–188.</li>
+      <li>J. L. Jacobsen, High-precision percolation thresholds and Potts-model critical manifolds from graph polynomials, <em>J. Phys. A</em> (2015) [<a href="https://arxiv.org/abs/1507.03027">arXiv:1507.03027</a>]; C. R. Scullard and J. L. Jacobsen [<a href="https://arxiv.org/abs/1209.1451">arXiv:1209.1451</a>]; J. L. Jacobsen [<a href="https://arxiv.org/abs/1401.7847">arXiv:1401.7847</a>].</li>
+      <li>R. A. Neher, K. Mecke and H. Wagner, Topological estimation of percolation thresholds, <em>J. Stat. Mech.</em> (2008) [<a href="https://arxiv.org/abs/0708.3250">arXiv:0708.3250</a>, <a href="https://arxiv.org/abs/0708.3251">arXiv:0708.3251</a>].</li>
+      <li>M. E. J. Newman and R. M. Ziff, Efficient Monte Carlo algorithm and high-precision results for percolation, <em>Phys. Rev. Lett.</em> (2000) [<a href="https://arxiv.org/abs/cond-mat/0005264">arXiv:cond-mat/0005264</a>]; P. N. Suding and R. M. Ziff [<a href="https://arxiv.org/abs/cond-mat/9811416">arXiv:cond-mat/9811416</a>].</li>
+      <li>D. M. Gordon, La Jolla Covering Repository [<a href="https://github.com/dmgordo/LJCR">GitHub</a>, <a href="https://doi.org/10.5281/zenodo.10779736">Zenodo v1.2</a>].</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  Last updated 2026-10-19
+</footer>
+
+</body>
+</html>
