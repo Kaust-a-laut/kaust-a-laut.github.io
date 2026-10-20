@@ -1,0 +1,16 @@
+[    0.0s] geometry/mirror/adjacency OK
+[   17.9s] designated cluster: two implementations agree on all 2^16 states
+[   18.4s] connected subsets of Q4 with >=3 sites: 37245; distinct G incl. empty: 37246
+[   18.6s] up-set generator reproduces Dedekind numbers M(0..5)
+[   20.1s] min over nontrivial up-sets: max-flow == brute force on 1020 random instances (k=2..5)
+[   20.3s] k=7 product-measure domination tests OK (exact minima as predicted)
+[   26.7s] p=9/25: all 8 x 256 values r_F(T) match a direct sum over eps' (exact)
+[   33.6s] p=9/25: nu_(F=(1, 0), U local=00000001) matches direct sum over eta, all 128 entries exact
+[   44.2s] p=9/25: nu_(F=(2, 1), U local=11111111) matches direct sum over eta, all 128 entries exact
+[   54.5s] p=9/25: nu_(F=(3, 1), U local=10010110) matches direct sum over eta, all 128 entries exact
+[   64.8s] p=9/25: nu_(F=(4, 1), U local=11001001) matches direct sum over eta, all 128 entries exact
+[   71.5s] p=9/25: nu_(F=(4, 0), U local=00010000) matches direct sum over eta, all 128 entries exact
+[   77.2s] p=3583/10000: all 8 x 256 values r_F(T) match a direct sum over eps' (exact)
+[   92.7s] p=3583/10000: nu_(F=(1, 0), U local=00000001) matches direct sum over eta, all 128 entries exact
+[  116.4s] p=3583/10000: nu_(F=(2, 1), U local=11111111) matches direct sum over eta, all 128 entries exact
+[  116.4s] ALL SELF-TESTS PASSED

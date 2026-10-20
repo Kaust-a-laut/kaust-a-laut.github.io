@@ -1,0 +1,25 @@
+{
+  "claim": "p_c^site(Z^4) <= 3583/10000",
+  "bound": "3583/10000",
+  "base": "p_c^site(Z^4) <= 0.4344 (Gomes, Pereira and Sanchis, J. Appl. Probab. 2026, Table 1), used as theta_4(4345/10000) > 0",
+  "alternative_base": "p_c^site(Z^3) <= 4427/10000 and Z^3 inside Z^4, used as theta_4(4428/10000) > 0; links (3972, 4428) and (3934, 3972) over 10000 join the chain at link 2",
+  "block": [2, 2, 2, 2],
+  "rule": "G = largest open cluster; ties: the cluster containing the smallest index 8x1+4x2+2x3+x4; empty if fewer than 3 sites",
+  "chain": [
+    {"p": "1967/5000", "q": "869/2000", "worst_margin": 1.195824e-04},
+    {"p": "749/2000", "q": "1967/5000", "worst_margin": 1.631108e-04},
+    {"p": "1829/5000", "q": "749/2000", "worst_margin": 2.043924e-04},
+    {"p": "1809/5000", "q": "1829/5000", "worst_margin": 2.622217e-04},
+    {"p": "3599/10000", "q": "1809/5000", "worst_margin": 1.612780e-04},
+    {"p": "359/1000", "q": "3599/10000", "worst_margin": 1.195907e-04},
+    {"p": "1793/5000", "q": "359/1000", "worst_margin": 1.597704e-04},
+    {"p": "224/625", "q": "1793/5000", "worst_margin": 1.273065e-04},
+    {"p": "3583/10000", "q": "224/625", "worst_margin": 1.110528e-04}
+  ],
+  "alternative_links": [
+    {"p": "993/2500", "q": "1107/2500", "worst_margin": 7.553864e-05},
+    {"p": "1967/5000", "q": "993/2500", "worst_margin": 1.671970e-02}
+  ],
+  "checks_per_link": "root: r_F(full face) >= q for 8 faces; 2040 entry laws (8 faces x 255 nonempty entry sets), each certified to dominate Bernoulli(q)^7 by an integer flow on the cover graph of {0,1}^7 (a monotone coupling) that is validated directly; exact integer arithmetic over all 2^16 block states",
+  "credit": "Caleb Ashton (GitHub: Kaust-a-laut), with Claude Code (Anthropic) running claude-opus-5-5"
+}

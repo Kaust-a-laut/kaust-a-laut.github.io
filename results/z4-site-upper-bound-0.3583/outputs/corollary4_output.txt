@@ -1,0 +1,28 @@
+Without intermediate rounding, from GPS26's inputs p_c(2) <= 0.68, p_c(3) <= 1/2:
+  d=4  0.434315   GPS26 table: 0.4344
+  d=5  0.415567   GPS26 table: 0.4156
+  d=6  0.292893   GPS26 table: 0.2929
+  d=7  0.286576   GPS26 table: 0.2866
+  d=8  0.247879   GPS26 table: 0.2479
+  d=9  0.206299   GPS26 table: 0.2063
+Without intermediate rounding, from p_c(3) <= 4427/10000 and p_c(4) <= 3583/10000:
+  d=5  0.344547
+  d=6  0.253475
+  d=7  0.248590
+  d=8  0.198938
+  d=9  0.177070
+
+With p_c(2) <= 0.68 (as in GPS26), p_c(3) <= 4427/10000, p_c(4) <= 3583/10000:
+  d=4  0.3583  (input (d = 4 chain))   GPS26 table: 0.4344   JL26: 0.4719
+  d=5  0.3446  (Prop 3.4 from d=4)   GPS26 table: 0.4156   JL26: 0.2839
+  d=6  0.2535  (Lemma 4.2, k=3)   GPS26 table: 0.2929   JL26: 0.2088
+  d=7  0.2487  (Prop 3.4 from d=6)   GPS26 table: 0.2866   JL26: 0.1676
+  d=8  0.1990  (Lemma 4.2, k=4)   GPS26 table: 0.2479   JL26: 0.1409
+  d=9  0.1771  (Lemma 4.2, k=3)   GPS26 table: 0.2063   JL26: 0.1221
+With p_c(2) <= 0.666894 (WO24), p_c(3) <= 4427/10000, p_c(4) <= 3583/10000:
+  d=4  0.3583  (input (d = 4 chain))   GPS26 table: 0.4344   JL26: 0.4719
+  d=5  0.3446  (Prop 3.4 from d=4)   GPS26 table: 0.4156   JL26: 0.2839
+  d=6  0.2535  (Lemma 4.2, k=3)   GPS26 table: 0.2929   JL26: 0.2088
+  d=7  0.2487  (Prop 3.4 from d=6)   GPS26 table: 0.2866   JL26: 0.1676
+  d=8  0.1990  (Lemma 4.2, k=4)   GPS26 table: 0.2479   JL26: 0.1409
+  d=9  0.1771  (Lemma 4.2, k=3)   GPS26 table: 0.2063   JL26: 0.1221

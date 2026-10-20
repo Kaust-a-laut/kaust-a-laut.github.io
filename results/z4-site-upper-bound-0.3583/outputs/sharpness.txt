@@ -1,0 +1,4 @@
+CERTIFICATE: PASS (p = 9/25, q = 3621/10000): root gap 0.3284, 2040 laws, smallest margin 7.363178e-05 at face 0, U = 10000000 (up-set of 120 patterns) [34s]
+exit 0
+CERTIFICATE: FAIL (law (F=0, U=1) does not dominate Bern(q)^7)
+exit 1 (expected 1: rejected)

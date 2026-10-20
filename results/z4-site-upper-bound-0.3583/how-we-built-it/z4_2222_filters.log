@@ -1,0 +1,36 @@
+=== largest:fh8
+L=[2, 2, 2, 2] rule=largest:fh8 faces=full (8/8/8/8/8/8/8/8 sites) n=16 exact, U=all
+p=0.34000  f(p)~0.23921  f-p=-0.10079  binding: entry face 0, U=10000000 [2040 sets U]  (11s)
+p=0.35000  f(p)~0.26276  f-p=-0.08724  binding: entry face 0, U=10000000 [2040 sets U]  (12s)
+p=0.36000  f(p)~0.28722  f-p=-0.07278  binding: entry face 0, U=10000000 [2040 sets U]  (11s)
+p=0.37000  f(p)~0.31249  f-p=-0.05751  binding: entry face 0, U=10000000 [2040 sets U]  (12s)
+=== largest:fh7
+L=[2, 2, 2, 2] rule=largest:fh7 faces=full (8/8/8/8/8/8/8/8 sites) n=16 exact, U=all
+p=0.34000  f(p)~0.30735  f-p=-0.03265  binding: entry face 0, U=10000000 [2040 sets U]  (11s)
+p=0.35000  f(p)~0.33111  f-p=-0.01889  binding: entry face 0, U=10000000 [2040 sets U]  (12s)
+p=0.36000  f(p)~0.35527  f-p=-0.00473  binding: entry face 0, U=10000000 [2040 sets U]  (12s)
+p=0.37000  f(p)~0.37974  f-p=+0.00974  binding: entry face 0, U=10000000 [2040 sets U]  (10s)
+=== largest:2:fh8
+L=[2, 2, 2, 2] rule=largest:2:fh8 faces=full (8/8/8/8/8/8/8/8 sites) n=16 exact, U=all
+p=0.34000  f(p)~0.23921  f-p=-0.10079  binding: entry face 0, U=10000000 [2040 sets U]  (11s)
+p=0.35000  f(p)~0.26276  f-p=-0.08724  binding: entry face 0, U=10000000 [2040 sets U]  (12s)
+p=0.36000  f(p)~0.28722  f-p=-0.07278  binding: entry face 0, U=10000000 [2040 sets U]  (11s)
+p=0.37000  f(p)~0.31249  f-p=-0.05751  binding: entry face 0, U=10000000 [2040 sets U]  (12s)
+=== largest:3:fh8
+L=[2, 2, 2, 2] rule=largest:3:fh8 faces=full (8/8/8/8/8/8/8/8 sites) n=16 exact, U=all
+p=0.34000  f(p)~0.23921  f-p=-0.10079  binding: entry face 0, U=10000000 [2040 sets U]  (11s)
+p=0.35000  f(p)~0.26276  f-p=-0.08724  binding: entry face 0, U=10000000 [2040 sets U]  (12s)
+p=0.36000  f(p)~0.28722  f-p=-0.07278  binding: entry face 0, U=10000000 [2040 sets U]  (11s)
+p=0.37000  f(p)~0.31249  f-p=-0.05751  binding: entry face 0, U=10000000 [2040 sets U]  (12s)
+=== largest:3:fh7
+L=[2, 2, 2, 2] rule=largest:3:fh7 faces=full (8/8/8/8/8/8/8/8 sites) n=16 exact, U=all
+p=0.34000  f(p)~0.30735  f-p=-0.03265  binding: entry face 0, U=10000000 [2040 sets U]  (11s)
+p=0.35000  f(p)~0.33111  f-p=-0.01889  binding: entry face 0, U=10000000 [2040 sets U]  (12s)
+p=0.36000  f(p)~0.35527  f-p=-0.00473  binding: entry face 0, U=10000000 [2040 sets U]  (12s)
+p=0.37000  f(p)~0.37974  f-p=+0.00974  binding: entry face 0, U=10000000 [2040 sets U]  (10s)
+=== largest:fw24
+L=[2, 2, 2, 2] rule=largest:fw24 faces=full (8/8/8/8/8/8/8/8 sites) n=16 exact, U=all
+p=0.34000  f(p)~0.21736  f-p=-0.12264  binding: entry face 0, U=10000000 [2040 sets U]  (12s)
+p=0.35000  f(p)~0.24070  f-p=-0.10930  binding: entry face 0, U=10000000 [2040 sets U]  (12s)
+p=0.36000  f(p)~0.26509  f-p=-0.09491  binding: entry face 0, U=10000000 [2040 sets U]  (11s)
+p=0.37000  f(p)~0.29044  f-p=-0.07956  binding: entry face 0, U=10000000 [2040 sets U]  (11s)

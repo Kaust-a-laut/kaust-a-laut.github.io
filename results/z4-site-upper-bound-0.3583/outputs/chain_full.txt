@@ -1,0 +1,10 @@
+CERTIFICATE: PASS (p = 1967/5000, q = 869/2000): root gap 0.3277, 2040 laws, smallest margin 1.195824e-04 at face 0, U = 10000000 (up-set of 120 patterns) [58s]
+CERTIFICATE: PASS (p = 749/2000, q = 1967/5000): root gap 0.3296, 2040 laws, smallest margin 1.631108e-04 at face 0, U = 10000000 (up-set of 120 patterns) [51s]
+CERTIFICATE: PASS (p = 1829/5000, q = 749/2000): root gap 0.3292, 2040 laws, smallest margin 2.043924e-04 at face 0, U = 10000000 (up-set of 120 patterns) [58s]
+CERTIFICATE: PASS (p = 1809/5000, q = 1829/5000): root gap 0.3289, 2040 laws, smallest margin 2.622217e-04 at face 0, U = 10000000 (up-set of 120 patterns) [58s]
+CERTIFICATE: PASS (p = 3599/10000, q = 1809/5000): root gap 0.3285, 2040 laws, smallest margin 1.612780e-04 at face 0, U = 10000000 (up-set of 120 patterns) [61s]
+CERTIFICATE: PASS (p = 359/1000, q = 3599/10000): root gap 0.3283, 2040 laws, smallest margin 1.195907e-04 at face 0, U = 10000000 (up-set of 120 patterns) [49s]
+CERTIFICATE: PASS (p = 1793/5000, q = 359/1000): root gap 0.3283, 2040 laws, smallest margin 1.597704e-04 at face 0, U = 10000000 (up-set of 120 patterns) [57s]
+CERTIFICATE: PASS (p = 224/625, q = 1793/5000): root gap 0.3282, 2040 laws, smallest margin 1.273065e-04 at face 0, U = 10000000 (up-set of 120 patterns) [45s]
+CERTIFICATE: PASS (p = 3583/10000, q = 224/625): root gap 0.3282, 2040 laws, smallest margin 1.110528e-04 at face 0, U = 10000000 (up-set of 120 patterns) [60s]
+exit 0

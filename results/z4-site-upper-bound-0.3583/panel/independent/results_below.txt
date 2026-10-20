@@ -1,0 +1,3 @@
+p=3582/10000: largest passing q = 3582/10000; link (3582,3583) FAIL, min margin -1.094e-05
+p=3581/10000: largest passing q = 3580/10000; link (3581,3582) FAIL, min margin -0.0001331
+p=3580/10000: largest passing q = 3578/10000; link (3580,3581) FAIL, min margin -0.0002554

@@ -332,10 +332,43 @@
         </figure>
       </li>
 
-      <!-- [3] z2-site-lower-bound-0.5567 -->
-      <li class="entry" id="z2-site-lower-bound-0.5567" data-slug="z2-site-lower-bound-0.5567">
+      <!-- [3] z4-site-upper-bound-0.3583 -->
+      <li class="entry" id="z4-site-upper-bound-0.3583" data-slug="z4-site-upper-bound-0.3583">
         <p class="entry-head">
           <span class="entry-num" data-ignore-num="1">[3]</span>
+          <span class="entry-title"><i>p</i><sub>c</sub><sup>site</sup>(&#8484;<sup>4</sup>) &le; 0.3583: an explicit upper bound for site percolation on the four-dimensional lattice.</span>
+        </p>
+        <p class="entry-status">Computer-assisted proof. Re-checked by two independent AI review agents (one reproduced the computation with its own code). Not yet peer-reviewed.</p>
+        <p class="entry-prev">
+          Previous best: <i>p</i><sub>c</sub> &le; 0.4344 — best published value found as of 2026-10-20T20:03:13Z, in Gomes, Pereira, Sanchis, <em>J. Appl. Probab.</em> (<a href="https://arxiv.org/abs/2106.10388">arXiv:2106.10388</a>, v2, 13 March 2026, <a href="https://doi.org/10.1017/jpr.2025.10041">DOI: 10.1017/jpr.2025.10041</a>), Table 1, non-oriented site percolation, d = 4.
+          [<a href="https://github.com/Kaust-a-laut/kaust-a-laut.github.io/tree/main/results/z4-site-upper-bound-0.3583">Code, certificate and checker</a>]
+          [<a href="results/z4-site-upper-bound-0.3583/README.md">package README</a>]
+          [<a href="results/z4-site-upper-bound-0.3583/panel/README.md">Independent re-check</a>]
+        </p>
+
+        <div class="entry-summary">
+          <p>In words: the critical probability of site percolation on the hypercubic lattice &#8484;<sup>4</sup> is at most 3583/10000. The best published rigorous upper bound we found was 0.4344 (Gomes, Pereira and Sanchis, Table 1); Jiang and Lang give 0.4719, and the bound <i>p</i><sub>c</sub><sup>site</sup>(&#8484;<sup>3</sup>) &le; 0.4427 gives 0.4164 through Gomes, Pereira and Sanchis, Proposition 3.4.</p>
+          <p>The proof is Section 8 of Part II of the paper <em>Explicit rigorous bounds for the site percolation threshold of the simple cubic lattice</em> (Caleb Ashton). It runs the block argument of Part II (a growth process in the style of van den Berg and Ermakov, with Strassen couplings) on &#8484;<sup>4</sup> with the blocks {0,1}<sup>4</sup>. A block's designated cluster is its largest open cluster, ties going to the cluster that contains the smallest index 8x<sub>1</sub>+4x<sub>2</sub>+2x<sub>3</sub>+x<sub>4</sub>, if it has at least 3 sites. Each step of the exploration must dominate Bernoulli(q)<sup>7</sup> (seven children); this reduces to root conditions on the 8 faces and to 8 x 255 = 2040 laws on {0,1}<sup>7</sup>. That cube has 2,414,682,040,998 up-sets, too many to list, so each domination is certified by an explicit flow on the cover graph of {0,1}<sup>7</sup> carrying Bernoulli(q)<sup>7</sup> upward into the law (a monotone coupling), and the flow is checked directly. All 2<sup>16</sup> block states are enumerated, and everything is exact integer arithmetic. A chain of nine such certificates goes from theta<sub>4</sub>(0.4345) &gt; 0 (the bound 0.4344) down to <i>p</i> = 0.3583. An alternative start, theta<sub>4</sub>(0.4428) &gt; 0 from <i>p</i><sub>c</sub><sup>site</sup>(&#8484;<sup>3</sup>) &le; 0.4427 (Part II of the same paper; &#8484;<sup>3</sup> is a subgraph of &#8484;<sup>4</sup>), adds two links that join the chain at its second link.</p>
+          <p>Monte Carlo estimates put <i>p</i><sub>c</sub><sup>site</sup>(&#8484;<sup>4</sup>) near 0.197; that is an estimate, not a bound.</p>
+          <p>The paper is not public yet; it will be linked here when it is. The same argument for &#8484;<sup>3</sup> is written out in the <a href="pdfs/z3-site-upper-bound-0.4427-proof.pdf">proof (PDF)</a> of card [2].</p>
+        </div>
+
+        <p class="entry-credits">Builds on: J. van den Berg and A. Ermakov (1996, <em>Random Structures Algorithms</em> 8, 199-212, the growth-process and Strassen-coupling method); V. Strassen (1965, <em>Ann. Math. Statist.</em> 36, 423-439); P. A. Gomes, A. Pereira and R. Sanchis (<em>J. Appl. Probab.</em> (2026), <a href="https://arxiv.org/abs/2106.10388">arXiv:2106.10388</a>, the base 0.4344, the table compared against, and Lemma 4.2 and Proposition 3.4); J. Jiang and S. Lang (<a href="https://arxiv.org/abs/2609.29806">arXiv:2609.29806</a>).</p>
+
+        <details>
+          <summary>Not claimed</summary>
+          <ul>
+            <li>Not the value of <i>p</i><sub>c</sub>, and not a bound below 0.3583: this block and rule have a fixed point near 0.3581.</li>
+            <li>No new bound in dimensions 5 to 9: through Gomes, Pereira and Sanchis this gives 0.3446 (d = 5) and 0.1990 (d = 8), above Jiang and Lang's 0.2839 and 0.1409.</li>
+            <li>Nothing about bond percolation.</li>
+          </ul>
+        </details>
+      </li>
+
+      <!-- [4] z2-site-lower-bound-0.5567 -->
+      <li class="entry" id="z2-site-lower-bound-0.5567" data-slug="z2-site-lower-bound-0.5567">
+        <p class="entry-head">
+          <span class="entry-num" data-ignore-num="1">[4]</span>
           <span class="entry-title"><i>p</i><sub>c</sub><sup>site</sup>(&#8484;<sup>2</sup>) &ge; 0.5567: a rigorous lower bound for site percolation on the square lattice.</span>
         </p>
         <p class="entry-status">Computer-assisted proof. Re-checked by three independent AI review agents (one reproduced the computation with its own code). Not yet peer-reviewed.</p>
@@ -400,12 +433,12 @@
     </ol>
 
     <h3>Numerical estimate</h3>
-    <ol class="pub-list" start="4">
+    <ol class="pub-list" start="5">
 
-      <!-- [4] lattice-23-site-threshold -->
+      <!-- [5] lattice-23-site-threshold -->
       <li class="entry" id="lattice-23-site-threshold" data-slug="lattice-23-site-threshold">
         <p class="entry-head">
-          <span class="entry-num" data-ignore-num="1">[4]</span>
+          <span class="entry-num" data-ignore-num="1">[5]</span>
           <span class="entry-title">Site percolation threshold of 2-uniform lattice #23: <i>p</i><sub>c</sub> = 0.57176454(10).</span>
         </p>
         <p class="entry-status">Numerical estimate with error bar, not a theorem. Re-checked by three independent AI review agents. Not yet peer-reviewed.</p>
@@ -437,12 +470,12 @@
     </ol>
 
     <h3>Combinatorial constructions</h3>
-    <ol class="pub-list" start="5">
+    <ol class="pub-list" start="6">
 
-      <!-- [5] covering-C61-25-3-27 -->
+      <!-- [6] covering-C61-25-3-27 -->
       <li class="entry" id="covering-C61-25-3-27" data-slug="covering-C61-25-3-27">
         <p class="entry-head">
-          <span class="entry-num" data-ignore-num="1">[5]</span>
+          <span class="entry-num" data-ignore-num="1">[6]</span>
           <span class="entry-title">C(61,25,3) &le; 27: a (61,25,3) covering design with 27 blocks.</span>
         </p>
         <p class="entry-status">Explicit construction; the included checker verifies it in seconds.</p>
@@ -469,10 +502,10 @@
         </details>
       </li>
 
-      <!-- [6] covering-C85-24-3-76 -->
+      <!-- [7] covering-C85-24-3-76 -->
       <li class="entry" id="covering-C85-24-3-76" data-slug="covering-C85-24-3-76">
         <p class="entry-head">
-          <span class="entry-num" data-ignore-num="1">[6]</span>
+          <span class="entry-num" data-ignore-num="1">[7]</span>
           <span class="entry-title">C(85,24,3) &le; 76: a (85,24,3) covering design with 76 blocks.</span>
         </p>
         <p class="entry-status">Explicit construction; the included checker verifies it in seconds.</p>
@@ -499,10 +532,10 @@
         </details>
       </li>
 
-      <!-- [7] covering-C41-12-5-2207 -->
+      <!-- [8] covering-C41-12-5-2207 -->
       <li class="entry" id="covering-C41-12-5-2207" data-slug="covering-C41-12-5-2207">
         <p class="entry-head">
-          <span class="entry-num" data-ignore-num="1">[7]</span>
+          <span class="entry-num" data-ignore-num="1">[8]</span>
           <span class="entry-title">C(41,12,5) &le; 2207: a (41,12,5) covering design with 2207 blocks.</span>
         </p>
         <p class="entry-status">Explicit construction; the included checker verifies it in seconds.</p>
@@ -529,10 +562,10 @@
         </details>
       </li>
 
-      <!-- [8] covering-C53-20-3-34 -->
+      <!-- [9] covering-C53-20-3-34 -->
       <li class="entry" id="covering-C53-20-3-34" data-slug="covering-C53-20-3-34">
         <p class="entry-head">
-          <span class="entry-num" data-ignore-num="1">[8]</span>
+          <span class="entry-num" data-ignore-num="1">[9]</span>
           <span class="entry-title">C(53,20,3) &le; 34: a (53,20,3) covering design with 34 blocks.</span>
         </p>
         <p class="entry-status">Explicit construction; the included checker verifies it in seconds.</p>
@@ -586,6 +619,7 @@
       <li>M. E. Fisher, Critical probabilities for cluster size and percolation problems, <em>J. Math. Phys.</em> 2 (1961) 620–627.</li>
       <li>V. Strassen, The existence of probability measures with given marginals, <em>Ann. Math. Statist.</em> 36 (1965) 423–439.</li>
       <li>P. A. Gomes, A. Pereira and R. Sanchis, Upper bounds for critical probabilities in Bernoulli percolation models, <em>J. Appl. Probab.</em> [<a href="https://arxiv.org/abs/2106.10388">arXiv:2106.10388</a>, <a href="https://doi.org/10.1017/jpr.2025.10041">DOI</a>].</li>
+      <li>J. Jiang and S. Lang, Coexistence of infinite clusters for percolation and Ising model on &#8484;<sup>d</sup> [<a href="https://arxiv.org/abs/2609.29806">arXiv:2609.29806</a>].</li>
       <li>J. C. Wierman and R. Oberly (2024), upper bound for site percolation on the square lattice [<a href="https://doi.org/10.1007/978-3-031-62166-6_9">DOI</a>]; J. C. Wierman, Substitution method critical probability bounds for the square lattice site percolation model, <em>Combin. Probab. Comput.</em> 4 (1995) 181–188.</li>
       <li>J. L. Jacobsen, High-precision percolation thresholds and Potts-model critical manifolds from graph polynomials, <em>J. Phys. A</em> (2015) [<a href="https://arxiv.org/abs/1507.03027">arXiv:1507.03027</a>]; C. R. Scullard and J. L. Jacobsen [<a href="https://arxiv.org/abs/1209.1451">arXiv:1209.1451</a>]; J. L. Jacobsen [<a href="https://arxiv.org/abs/1401.7847">arXiv:1401.7847</a>].</li>
       <li>R. A. Neher, K. Mecke and H. Wagner, Topological estimation of percolation thresholds, <em>J. Stat. Mech.</em> (2008) [<a href="https://arxiv.org/abs/0708.3250">arXiv:0708.3250</a>, <a href="https://arxiv.org/abs/0708.3251">arXiv:0708.3251</a>].</li>
@@ -597,7 +631,7 @@
 </main>
 
 <footer>
-  Last updated 2026-10-19
+  Last updated 2026-10-20
 </footer>
 
 </body>

@@ -1,0 +1,3 @@
+CERTIFICATE: PASS (p = 993/2500, q = 1107/2500): root gap 0.3268, 2040 laws, smallest margin 7.553864e-05 at face 0, U = 10000000 (up-set of 120 patterns) [53s]
+CERTIFICATE: PASS (p = 1967/5000, q = 993/2500): root gap 0.3650, 2040 laws, smallest margin 1.671970e-02 at face 0, U = 11111111 (up-set of 127 patterns) [58s]
+exit 0

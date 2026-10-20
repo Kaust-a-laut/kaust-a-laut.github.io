@@ -1,0 +1,16 @@
+laws at p=9/25 built in 19.1s
+root: min_F r_F(F) = 0.690521
+   bracket: q=3600/10000 passes, q=4000/10000 fails
+   q=3800/10000 -> fail
+   q=3700/10000 -> fail
+   q=3650/10000 -> fail
+   q=3625/10000 -> fail
+   q=3612/10000 -> pass
+   q=3618/10000 -> pass
+   q=3621/10000 -> pass
+   q=3623/10000 -> fail
+   q=3622/10000 -> fail
+q=3621/10000: PASS; min margin 7.363e-05 at F_{1,0} (x1=0), U=[(0, 0, 0, 0)]; failing laws 0/2040; A minimal = ['{x1=1}', '{x2=1}', '{x3=1}', '{x4=1}']
+q=3622/10000: FAIL; min margin -3.017e-05 at F_{1,0} (x1=0), U=[(0, 0, 0, 0)]; failing laws 8/2040; A minimal = ['{x1=1}', '{x2=1}', '{x3=1}', '{x4=1}']
+exact bisection: threshold q*(9/25) in [0.3621709283, 0.3621709284]
+step 3 time 120.9s

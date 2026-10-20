@@ -1,0 +1,5 @@
+=== largest:3
+L=[2, 2, 2, 3] rule=largest:3 faces=full (12/12/12/12/12/12/8/8 sites) n=24 exact, U=all
+  7890649 distinct designated sets (250s)
+p=0.33000  f(p)~0.19842  f-p=-0.13158  binding: entry face 0, U=100000000000 [25080 sets U]  (386s)
+p=0.34000  f(p)~0.22048  f-p=-0.11952  binding: entry face 0, U=100000000000 [25080 sets U]  (397s)

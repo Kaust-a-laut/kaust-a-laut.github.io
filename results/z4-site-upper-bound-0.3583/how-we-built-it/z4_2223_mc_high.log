@@ -1,0 +1,5 @@
+L=[2, 2, 2, 3] rule=largest:3 faces=full (12 sites each) n=24 Monte Carlo, 400000 samples
+p=0.40000  f(p)~0.37410  f-p=-0.02590  binding: entry face 6, U=site0  (25s)
+p=0.42000  f(p)~0.43258  f-p=+0.01258  binding: entry face 0, U=site0  (26s)
+p=0.44000  f(p)~0.49282  f-p=+0.05282  binding: entry face 6, U=site0  (27s)
+p=0.46000  f(p)~0.55272  f-p=+0.09272  binding: entry face 4, U=site0  (28s)

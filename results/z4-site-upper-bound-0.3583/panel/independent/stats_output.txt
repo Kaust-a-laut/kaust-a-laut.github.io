@@ -1,0 +1,4 @@
+phi(C) == 4|C| for every cluster of every state: True
+states whose largest cluster (>=3 sites) is tied in size: 868
+P_p(size tie) at p=0.36: 1.515e-02
+tie counts by |eta|: {6: 432, 7: 144, 8: 284, 10: 8}
